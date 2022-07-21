@@ -1,7 +1,6 @@
-/*
- * For a detailed explanation regarding each configuration property and type check, visit:
- * https://jestjs.io/docs/configuration
- */
+import fs from 'fs';
+
+const swcConfig = JSON.parse(fs.readFileSync(`${__dirname}/.swcrc`, 'utf-8'));
 
 export default {
     // All imported modules in your tests should be mocked automatically
@@ -11,7 +10,7 @@ export default {
     // bail: 0,
 
     // The directory where Jest should store its cached dependency information
-    // cacheDirectory: "C:\\Users\\ramos\\AppData\\Local\\Temp\\jest",
+    // cacheDirectory: "C:\\Users\\user\\AppData\\Local\\Temp\\jest",
 
     // Automatically clear mock calls, instances, contexts and results before every test
     clearMocks: true,
@@ -89,6 +88,7 @@ export default {
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
     moduleNameMapper: {
+        '\\.(css|less)$': 'identity-obj-proxy',
         '^@/(.*)$': '<rootDir>/src/$1',
     },
 
@@ -173,7 +173,9 @@ export default {
     // testRunner: "jest-circus/runner",
 
     // A map from regular expressions to paths to transformers
-    // transform: undefined,
+    transform: {
+        '^.+\\.(t|j)sx?$': ['@swc/jest', swcConfig],
+    },
 
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
     // transformIgnorePatterns: [

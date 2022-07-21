@@ -14,7 +14,7 @@ A React boilerplate with my favorite settings.
 - Husky
 - lint-staged
 - commitlint
-- Path Alias (Typescript/Vite)
+- Path Alias (Typescript/Vite/Jest)
 
 ## Roadmap
 
