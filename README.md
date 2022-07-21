@@ -18,8 +18,8 @@ A React boilerplate with my favorite settings.
 
 ## Roadmap
 
-- Jest + @testing-library
-- Folder structure
-- ESLint improvements
-- Architecture
-- Storybook
+- [ ] Jest + @testing-library
+- [ ] Folder structure
+- [ ] ESLint improvements
+- [ ] Architecture
+- [ ] Storybook
